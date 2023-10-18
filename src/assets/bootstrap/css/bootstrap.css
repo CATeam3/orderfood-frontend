@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap");
+
+/*!
+ * Bootstrap  v5.3.0 (https://getbootstrap.com/)
+ * Copyright 2011-2023 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+
+/* ne radi */
+:root [data-bs-theme="light"] {
+  background-color: #FFFFFF;
+  --bs-body-bg: #2C2C2C !important;
+}
+
+[data-bs-theme="dark"] {
+  background-color: #2C2C2C;
+  --bs-body-bg: #2C2C2C !important;
+}
+/* ne radi */
+
+body [data-bs-theme="light"] {
+  background-color: #FFFFFF;
+  --bs-body-bg: #FFFFFF !important;
+}
+
+
+body [data-bs-theme="dark"] {
+  background-color: #2C2C2C;
+  --bs-body-bg: #2C2C2C !important;
+}
+
+.f-button-primary {
+  background: linear-gradient(to bottom, #db0000, #ff5e3b);
+  color: white;
+}
+
+.f-button-primary:hover {
+  background: linear-gradient(to bottom, #db0000, #db0000);
+}
+
+.f-button-primary:focus {
+  background: linear-gradient(to bottom, #f8cccc, #f8cccc);
+  color: #db0000;
+}
+
+.f-button-secondery {
+  background: linear-gradient(to bottom, #f8cccc, #f8cccc);
+  color: #db0000;
+}
+
+.text-color-primary {
+  color: #db0000;
+}
+
+.spline-sans {
+  font-family: "Spline Sans", sans-serif;
+}
+
+.text-color-gray {
+  color: #313131;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox .checkmark {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #db0000;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.custom-checkbox {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.custom-checkbox:hover .checkmark {
+  background-color: #fbdcdc;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #db0000;
+  border-color: #db0000;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+.bottom-center {
+  font-size: 12px;
+  position:absolute;
+  width:150px;
+  height:12px;
+  bottom:70px;
+  right:50%;
+  left:50%;
+  margin-left: -75px;
+}
+
+[data-bs-theme="light"] .input-flamber {
+  background-color: #F0F0F0 !important;
+  outline: none !important;
+}
+
+[data-bs-theme="light"] .input-flamber:focus {
+  background-color: #fcebeb !important;
+  outline: 1px solid #db0000  !important;
+}
+
+[data-bs-theme="light"] .input-flamber::placeholder {
+  color: #818181 !important;
+}
+
+[data-bs-theme="light"] .input-flamber:focus::placeholder {
+  color: #DB0000 !important;
+}
+
+
+[data-bs-theme="dark"] .input-flamber {
+  background-color: #616161 !important;
+  outline: none !important;
+}
+
+[data-bs-theme="dark"] .input-flamber:focus {
+  background-color: #616161 !important;
+  outline: 1px solid #db0000 !important;
+}
+
+[data-bs-theme="dark"] .input-flamber::placeholder {
+  color: #FFFFFF !important;
+}
+
+
+[data-bs-theme="dark"] .input-flamber:focus::placeholder {
+  color: #DB0000 !important;
+}
+
