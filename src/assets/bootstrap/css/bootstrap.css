@@ -7,33 +7,47 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-
-/* ne radi */
-:root [data-bs-theme="light"] {
-  background-color: #FFFFFF;
+[data-bs-theme=dark] {
   --bs-body-bg: #2C2C2C !important;
+  --bs-body-bg-rgb: 44,44,44 !important;
+
 }
 
-[data-bs-theme="dark"] {
-  background-color: #2C2C2C;
-  --bs-body-bg: #2C2C2C !important;
-}
-/* ne radi */
-
-body [data-bs-theme="light"] {
-  background-color: #FFFFFF;
-  --bs-body-bg: #FFFFFF !important;
+[data-bs-theme=light] .info-bg {
+  background-color: #FCEBEB;
 }
 
+[data-bs-theme=dark] .info-bg {
+  background-color: white;
+}
 
-body [data-bs-theme="dark"] {
-  background-color: #2C2C2C;
-  --bs-body-bg: #2C2C2C !important;
+.flamber-gradient {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to top right, #FF5E3B, #DB0000);
+  background-attachment: fixed;
+  z-index: -5;
+
+}
+
+.bg-circle {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190%;
+  height: 75%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  z-index: -1;
+
 }
 
 .f-button-primary {
   background: linear-gradient(to bottom, #db0000, #ff5e3b);
   color: white;
+
 }
 
 .f-button-primary:hover {
@@ -50,8 +64,25 @@ body [data-bs-theme="dark"] {
   color: #db0000;
 }
 
+.bottom-border-color-primary {
+  border-bottom: 3px solid #DB0000;
+}
+
+.selector-line {
+  margin-top: -3px;
+  height: 3px;
+  background-color: white;
+}
+
 .text-color-primary {
   color: #db0000;
+}
+
+[data-bs-theme=dark] .text-color-theme {
+  color: #ffffff;
+}
+[data-bs-theme=light].text-color-theme {
+  color: rgba(49, 49, 49, 1);
 }
 
 .spline-sans {
