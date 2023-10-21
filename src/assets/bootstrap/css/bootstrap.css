@@ -7,10 +7,24 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+:root,
 [data-bs-theme=dark] {
   --bs-body-bg: #2C2C2C !important;
   --bs-body-bg-rgb: 44,44,44 !important;
+  color: #2C2C2C;
 
+}
+[data-bs-theme=light] {
+  --bs-body-bg: #FFFAFA !important;
+  --bs-body-bg-rgb: 255,250,250 !important;
+  color: #ffffff;
+}
+
+[data-bs-theme=dark] .text-color-theme {
+  color: #ffffff !important;
+}
+[data-bs-theme=light] .text-color-theme {
+  color: #2C2C2C !important;
 }
 
 [data-bs-theme=light] .info-bg {
@@ -21,12 +35,27 @@
   background-color: white;
 }
 
+.settings-options {
+  background-color: rgba(252, 235, 235, 0.2);
+  padding: 13px;
+}
+
+
+
 .flamber-gradient {
   position: absolute;
   height: 100vh;
   width: 100vw;
   background: linear-gradient(to top right, #FF5E3B, #DB0000);
   background-attachment: fixed;
+  z-index: -5;
+
+}
+
+.page {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
   z-index: -5;
 
 }
@@ -68,22 +97,22 @@
   border-bottom: 3px solid #DB0000;
 }
 
-.selector-line {
+[data-bs-theme=dark] .selector-line {
   margin-top: -3px;
   height: 3px;
   background-color: white;
+}
+
+[data-bs-theme=light] .selector-line {
+  margin-top: -3px;
+  height: 3px;
+  background-color: #F0F0F0;
 }
 
 .text-color-primary {
   color: #db0000;
 }
 
-[data-bs-theme=dark] .text-color-theme {
-  color: #ffffff;
-}
-[data-bs-theme=light].text-color-theme {
-  color: rgba(49, 49, 49, 1);
-}
 
 .spline-sans {
   font-family: "Spline Sans", sans-serif;
@@ -190,3 +219,33 @@
   color: #DB0000 !important;
 }
 
+
+.theme-toggle   {
+  width: 90px;
+  border-radius: 20px;
+  position: relative;
+}
+
+
+.theme-selector-ball {
+  background: linear-gradient(to bottom right, #FF5E3B, #DB0000);
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  border-radius: 100%;
+  margin: 2.5px;
+  margin-left: 3.1px;
+
+}
+
+.theme-selector-ball.moveRight {
+  transform: translateX(51px);
+}
+
+.mt-40p {
+  margin-top: 30%;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}

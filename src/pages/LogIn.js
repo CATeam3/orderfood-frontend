@@ -9,8 +9,10 @@ export const LogIn = () => {
             className="fw-semibold text-color-gray"
             style={{ fontSize: "36px" }}
           >
-            <div style={{ marginBottom: "-10px" }}>Welcome</div>
-            <div>back! 👋</div>
+            <div className="text-color-theme" style={{ marginBottom: "-10px" }}>
+              Welcome
+            </div>
+            <div className="text-color-theme">back! 👋</div>
           </div>
 
           <div className="fs-6 text-dark-emphasis" style={{ fontSize: "14px" }}>
@@ -21,7 +23,7 @@ export const LogIn = () => {
         <form className="mb-5">
           <div className="text-start d-flex flex-column">
             <label
-              className="fw-medium mb-2"
+              className="fw-medium mb-2 text-color-theme"
               htmlFor="email"
               style={{ fontSize: "18px" }}
             >
@@ -36,7 +38,7 @@ export const LogIn = () => {
           </div>
           <div className="text-start d-flex flex-column">
             <label
-              className="fw-medium mb-2"
+              className="fw-medium mb-2 text-color-theme"
               htmlFor="password"
               style={{ fontSize: "18px" }}
             >
@@ -50,7 +52,7 @@ export const LogIn = () => {
             />
           </div>
           <div className="text-start mb-3">
-            <label className="custom-checkbox">
+            <label className="custom-checkbox text-color-theme">
               <input type="checkbox" />
               <span className="checkmark"></span>
               Remember me?
@@ -61,7 +63,7 @@ export const LogIn = () => {
             <a
               href="#"
               style={{ fontSize: "14px" }}
-              className=" text-color-primary text-decoration-none fw-medium"
+              className=" text-color-primary text-decoration-none fw-medium "
             >
               Forgot your password?
             </a>
@@ -74,7 +76,9 @@ export const LogIn = () => {
           </div>
 
           <div className="d-flex justify-content-center">
-            <p className="text-color-gray">Don’t have an account?</p>
+            <p className="text-color-gray text-color-theme">
+              Don’t have an account?
+            </p>
             <a
               href="#"
               className="text-color-primary text-decoration-none fw-medium ms-2"
@@ -85,7 +89,9 @@ export const LogIn = () => {
         </form>
       </section>
 
-      <div className="mt-5 pt-5 bottom-center">All rights reserved Flember</div>
+      <div className="mt-5 pt-5 bottom-center text-color-theme">
+        All rights reserved Flember
+      </div>
     </div>
   );
 };

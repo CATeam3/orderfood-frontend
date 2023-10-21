@@ -9,8 +9,10 @@ export const ForgotPassword = () => {
             className="fw-semibold text-color-gray"
             style={{ fontSize: "36px" }}
           >
-            <div style={{ marginBottom: "-10px" }}>Forgot your</div>
-            <div>password?</div>
+            <div className="text-color-theme" style={{ marginBottom: "-10px" }}>
+              Forgot your
+            </div>
+            <div className="text-color-theme">password?</div>
           </div>
 
           <div
@@ -25,7 +27,7 @@ export const ForgotPassword = () => {
         <form className="mb-5">
           <div className="text-start d-flex flex-column">
             <label
-              className="fw-medium mb-2"
+              className="fw-medium mb-2 text-color-theme"
               htmlFor="email"
               style={{ fontSize: "18px" }}
             >
@@ -40,13 +42,15 @@ export const ForgotPassword = () => {
           </div>
 
           <div className="d-flex flex-column">
-            <button className="f-button-primary border-0 fs-5 p-2 mt-5 px-5 rounded-2 mb-2">
+            <button className="f-button-primary border-0 fs-5 p-2 mt-5 px-5 rounded-2 mb-2 ">
               Confirm
             </button>
           </div>
 
           <div className="d-flex justify-content-center">
-            <p className="text-color-gray">Changed your mind?</p>
+            <p className="text-color-gray text-color-theme">
+              Changed your mind?
+            </p>
             <a
               href="#"
               className="text-color-primary text-decoration-none fw-medium ms-2"
@@ -57,7 +61,9 @@ export const ForgotPassword = () => {
         </form>
       </section>
 
-      <div className="mt-5 pt-5 bottom-center">All rights reserved Flember</div>
+      <div className="mt-5 pt-5 bottom-center text-color-theme">
+        All rights reserved Flember
+      </div>
     </div>
   );
 };

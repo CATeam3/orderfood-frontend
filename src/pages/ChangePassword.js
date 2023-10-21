@@ -9,8 +9,10 @@ export const ChangePassword = () => {
             className="fw-semibold text-color-gray"
             style={{ fontSize: "36px" }}
           >
-            <div style={{ marginBottom: "-10px" }}>Change your</div>
-            <div>password!</div>
+            <div className="text-color-theme" style={{ marginBottom: "-10px" }}>
+              Change your
+            </div>
+            <div className="text-color-theme">password!</div>
           </div>
 
           <div className="fs-6 text-dark-emphasis" style={{ fontSize: "14px" }}>
@@ -21,8 +23,8 @@ export const ChangePassword = () => {
         <form className="mb-5">
           <div className="text-start d-flex flex-column">
             <label
-              className="fw-medium mb-2"
-              htmlFor="newpassword"
+              className="fw-medium mb-2 text-color-theme"
+              htmlFor="newpassword text-color-theme"
               style={{ fontSize: "18px" }}
             >
               Your new password
@@ -36,7 +38,7 @@ export const ChangePassword = () => {
           </div>
           <div className="text-start d-flex flex-column">
             <label
-              className="fw-medium mb-2"
+              className="fw-medium mb-2 text-color-theme"
               htmlFor="password"
               style={{ fontSize: "18px" }}
             >
@@ -57,7 +59,9 @@ export const ChangePassword = () => {
           </div>
 
           <div className="d-flex justify-content-center">
-            <p className="text-color-gray">Changed your mind?</p>
+            <p className="text-color-gray text-color-theme">
+              Changed your mind?
+            </p>
             <a
               href="#"
               className="text-color-primary text-decoration-none fw-medium ms-2"
@@ -68,7 +72,9 @@ export const ChangePassword = () => {
         </form>
       </section>
 
-      <div className="mt-5 pt-5 bottom-center">All rights reserved Flember</div>
+      <div className="mt-5 pt-5 bottom-center text-color-theme">
+        All rights reserved Flember
+      </div>
     </div>
   );
 };
