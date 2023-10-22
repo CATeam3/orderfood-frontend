@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/bootstrap/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { ForgotPassword } from "./pages/ForgotPassword";
-import { LogIn } from "./pages/LogIn";
+import { Login } from "./pages/Login";
 import { ChangePassword } from "./pages/ChangePassword";
 import { Register } from "./pages/Register";
 import { Profile } from "./pages/Profile";
@@ -29,12 +29,18 @@ function App() {
   }, []);
 
   return (
-    <div
-      className={`App bg-body`}
-      data-bs-theme={localStorage.getItem("theme")}
-    >
-      <Specifications />
-    </div>
+    <Routes>
+      <Route path="/" element={<WelcomePage />} />
+      <Route path="/home" element={<HomeMenu />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/changepassword" element={<ChangePassword />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/item" element={<ItemView />} />
+      <Route path="/cart" element={<MyCart />} />
+      <Route path="/specs" element={<Specifications />} />
+    </Routes>
   );
 }
 

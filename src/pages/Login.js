@@ -1,6 +1,6 @@
 import React from "react";
 
-export const LogIn = () => {
+export const Login = () => {
   return (
     <div className="m-4 spline-sans mt-5 pt-3 ">
       <section>
