@@ -52,6 +52,12 @@
 
 }
 
+.flamber-gradient-2 {
+  background: linear-gradient(to top right, #FF5E3B, #DB0000);
+  z-index: -5;
+
+}
+
 .page {
   position: absolute;
   height: 100vh;
@@ -248,4 +254,138 @@
 
 .ReactModal__Overlay {
   background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.move-up {
+  transform: translateY(-50%);
+}
+
+.search-bar {
+  outline: 1px solid white;
+}
+
+.menu-item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 150px;
+}
+
+.custom-shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.fs-custom-tiny {
+  font-size: 0.5rem;
+}
+
+.fs-custom-small {
+  font-size: 0.7rem;
+}
+
+
+.bottom-left {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
+
+.bottom-right {
+  position: relative;
+  bottom: 0px;
+  right: 0px;
+}
+
+.text-overflow {
+  width: 100%; /* Ensure it takes the full width of the parent */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.ItemImage {
+  height: 40vh; /* This sets the container to 100% of the viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.ItemImageContent {
+  flex: 1; /* This makes it take up the available vertical space */
+}
+
+.cover-div {
+  height: 50px;
+  border-radius: 50px;
+  transform: translatey(-50%);
+}
+
+.move-up-2 {
+  transform: translatey(-40px);
+}
+
+.description-container {
+  max-height: 100px; /* Adjust the value as per your needs */
+  overflow: hidden;
+}
+
+.description-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+.custom-checkbox2 input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox2 .checkmark2 {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #db0000;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition:
+          background-color 0.3s,
+          border-color 0.3s;
+}
+
+.custom-checkbox2 {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 35px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.custom-checkbox2:hover .checkmark2 {
+  background-color: rgba(0, 0, 0, 0.49);
+}
+
+.custom-checkbox2 input[type="checkbox"]:checked + .checkmark2 {
+  background-color: #db0000;
+  border-color: #db0000;
+}
+
+.custom-checkbox2 input[type="checkbox"]:checked + .checkmark2::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 5px;
+  width: 10px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }

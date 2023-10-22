@@ -10,6 +10,12 @@ import { Profile } from "./pages/Profile";
 import { Settings } from "./pages/Settings";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { WelcomePage } from "./pages/WelcomePage";
+import { HomeMenu } from "./pages/HomeMenu";
+import { Categories } from "./pages/Categories";
+import { CategorySection } from "./pages/CategorySection";
+import { ItemView } from "./pages/ItemView";
+import { MyCart } from "./pages/MyCart";
+import { Specifications } from "./pages/Specifications";
 
 function App() {
   useEffect(() => {
@@ -27,7 +33,7 @@ function App() {
       className={`App bg-body`}
       data-bs-theme={localStorage.getItem("theme")}
     >
-      <Register />
+      <Specifications />
     </div>
   );
 }

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Margherita",
+    "price": 7.5,
+    "description": "The traditional Margherita pizza, topped with tomato sauce, fresh mozzarella cheese, basil leaves, and sometimes grated Parmesan cheese. Baked in wood-fired oven.",
+    "review": 4.6,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 21
+  },
+  {
+    "id": 2,
+    "title": "Bolognese",
+    "price": 8,
+    "description": "Tomato purée, beef, basil...",
+    "review": 4.6,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 21
+  },
+  {
+    "id": 3,
+    "title": "Another Item",
+    "price": 9,
+    "description": "Another item description...",
+    "review": 4.8,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 21
+  },
+  {
+    "id": 3,
+    "title": "Another Item",
+    "price": 9,
+    "description": "Another item description...",
+    "review": 4.8,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 21
+  },
+  {
+    "id": 3,
+    "title": "Another Item",
+    "price": 9,
+    "description": "Another item description...",
+    "review": 4.8,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 21
+  },
+  {
+    "id": 3,
+    "title": "Another Item",
+    "price": 9,
+    "description": "Another item description...",
+    "review": 4.8,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 21
+  }
+]
