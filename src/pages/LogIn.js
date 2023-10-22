@@ -61,7 +61,7 @@ export const LogIn = () => {
 
           <div className="text-start mb-1">
             <a
-              href="#"
+              href="/forgot-password"
               style={{ fontSize: "14px" }}
               className=" text-color-primary text-decoration-none fw-medium "
             >
@@ -80,7 +80,7 @@ export const LogIn = () => {
               Don’t have an account?
             </p>
             <a
-              href="#"
+              href="/register"
               className="text-color-primary text-decoration-none fw-medium ms-2"
             >
               Register!

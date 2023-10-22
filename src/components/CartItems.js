@@ -1,13 +1,20 @@
 import React from "react";
 import * as Bs from "react-icons/bs";
 import * as Fa from "react-icons/fa";
+import { IDContextProvider, useIDContext } from "./IDContext";
 
 const CartItems = ({ item }) => {
+  const { removeID } = useIDContext();
+
   const containerStyle = {
     backgroundImage: `url(${item.imageUrl})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     padding: "30px",
+  };
+
+  const removeFromCart = () => {
+    removeID(item.id);
   };
 
   return (
@@ -22,11 +29,11 @@ const CartItems = ({ item }) => {
             <div>{item.title}</div>
             <div className="d-flex mt-2">
               <div className="d-flex text-color-theme d-flex justify-content-between ">
-                <div className="z-1 d-flex align-items-center flamber-gradient-2 rounded-circle p-2 fw-bold   custom-shadow">
+                <div className="z-0 d-flex align-items-center flamber-gradient-2 rounded-circle p-2 fw-bold   custom-shadow">
                   <Fa.FaMinus size="10" />
                 </div>
                 <div className="d-flex align-items-center fw-bold mx-2">1</div>
-                <div className="z-1 d-flex align-items-center flamber-gradient-2 rounded-circle p-2 fw-bold  custom-shadow">
+                <div className="z-0 d-flex align-items-center flamber-gradient-2 rounded-circle p-2 fw-bold  custom-shadow">
                   <Fa.FaPlus size="10" />
                 </div>
               </div>
@@ -36,7 +43,7 @@ const CartItems = ({ item }) => {
         </div>
       </div>
       <div className="align-items-end">
-        <Fa.FaTimes />
+        <Fa.FaTimes onClick={removeFromCart} />
       </div>
     </div>
   );

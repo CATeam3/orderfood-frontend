@@ -1,62 +1,62 @@
 [
   {
     "id": 1,
-    "title": "Margherita",
-    "price": 7.5,
-    "description": "The traditional Margherita pizza, topped with tomato sauce, fresh mozzarella cheese, basil leaves, and sometimes grated Parmesan cheese. Baked in wood-fired oven.",
-    "review": 4.6,
+    "title": "Pepperoni Pizza",
+    "price": 8.5,
+    "description": "Delicious pepperoni pizza topped with tomato sauce, mozzarella cheese, and pepperoni slices. Baked to perfection in a wood-fired oven.",
+    "review": 4.7,
     "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
     "WaitTime": 30,
-    "reviewCount": 21
+    "reviewCount": 28
   },
   {
     "id": 2,
-    "title": "Bolognese",
-    "price": 8,
-    "description": "Tomato purée, beef, basil...",
+    "title": "Vegetarian Pasta",
+    "price": 9,
+    "description": "A hearty vegetarian pasta dish with tomato purée, fresh vegetables, and basil. A delightful combination of flavors.",
+    "review": 4.5,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 19
+  },
+  {
+    "id": 3,
+    "title": "Mouthwatering Burger",
+    "price": 10.5,
+    "description": "An amazing burger with a juicy patty, fresh lettuce, tomatoes, and secret sauce. Served with crispy fries.",
+    "review": 4.9,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 35
+  },
+  {
+    "id": 4,
+    "title": "Seafood Paella",
+    "price": 12.5,
+    "description": "A seafood lover's dream! Our paella features a mix of fresh seafood, saffron, and rice cooked to perfection.",
+    "review": 4.8,
+    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
+    "WaitTime": 30,
+    "reviewCount": 26
+  },
+  {
+    "id": 5,
+    "title": "Chicken Teriyaki",
+    "price": 11,
+    "description": "Tender chicken pieces marinated in teriyaki sauce and grilled to perfection. Served with steamed rice and vegetables.",
     "review": 4.6,
     "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
     "WaitTime": 30,
-    "reviewCount": 21
+    "reviewCount": 22
   },
   {
-    "id": 3,
-    "title": "Another Item",
-    "price": 9,
-    "description": "Another item description...",
-    "review": 4.8,
+    "id": 6,
+    "title": "Gourmet Salad",
+    "price": 7,
+    "description": "A refreshing gourmet salad with mixed greens, cherry tomatoes, feta cheese, and a balsamic vinaigrette dressing.",
+    "review": 4.7,
     "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
     "WaitTime": 30,
-    "reviewCount": 21
-  },
-  {
-    "id": 3,
-    "title": "Another Item",
-    "price": 9,
-    "description": "Another item description...",
-    "review": 4.8,
-    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
-    "WaitTime": 30,
-    "reviewCount": 21
-  },
-  {
-    "id": 3,
-    "title": "Another Item",
-    "price": 9,
-    "description": "Another item description...",
-    "review": 4.8,
-    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
-    "WaitTime": 30,
-    "reviewCount": 21
-  },
-  {
-    "id": 3,
-    "title": "Another Item",
-    "price": 9,
-    "description": "Another item description...",
-    "review": 4.8,
-    "imageUrl": "https://i.ibb.co/54Kqdvr/placeholder.png",
-    "WaitTime": 30,
-    "reviewCount": 21
+    "reviewCount": 29
   }
 ]

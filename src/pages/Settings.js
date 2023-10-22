@@ -6,9 +6,15 @@ import * as Fa6 from "react-icons/fa6";
 import * as Bs from "react-icons/bs";
 import SettingProfilePng from "../assets/images/SettingsProfile.png";
 import { ThemeToggle } from "../components/ThemeToggle";
+import { useNavigate } from "react-router-dom";
 
 export const Settings = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -29,7 +35,10 @@ export const Settings = () => {
           Are you certain you want <br /> to Log Out?
         </div>
         <div className="d-flex flex-column">
-          <button className="f-button-primary border-0 fs-5 p-2 mb-3 px-5 rounded-2">
+          <button
+            className="f-button-primary border-0 fs-5 p-2 mb-3 px-5 rounded-2"
+            onClick={closeModal}
+          >
             No, Just Kidding
           </button>
         </div>
@@ -42,7 +51,7 @@ export const Settings = () => {
 
       <div className="mx-4">
         <div className="d-flex align-items-center justify-content-between mt-3 pt-5">
-          <div>
+          <div onClick={goBack}>
             <Hi.HiOutlineArrowLeft size="40" />
           </div>
           <div className="fs-3 fw-semibold">Settings</div>

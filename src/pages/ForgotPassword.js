@@ -52,7 +52,7 @@ export const ForgotPassword = () => {
               Changed your mind?
             </p>
             <a
-              href="#"
+              href="/login"
               className="text-color-primary text-decoration-none fw-medium ms-2"
             >
               Go back!

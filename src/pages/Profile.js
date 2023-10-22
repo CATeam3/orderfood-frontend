@@ -2,8 +2,14 @@ import React from "react";
 import ProfilePng from "../assets/images/Profile.png";
 import * as Hi from "react-icons/hi";
 import * as Bi from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 export const Profile = () => {
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="flamber-gradient">
       <div className="bg-circle bg-body"></div>
@@ -11,7 +17,7 @@ export const Profile = () => {
       <div className="mx-4">
         <div className="d-flex align-items-center justify-content-between mt-3 pt-5">
           <div>
-            <Hi.HiArrowLeft size="40" />
+            <Hi.HiArrowLeft size="40" onClick={goBack} />
           </div>
           <div className="fs-3 fw-semibold">Profile</div>
           <div>

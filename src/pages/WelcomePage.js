@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import darkLogo from "../assets/images/flamber-logo-dark.svg";
 import lightLogo from "../assets/images/flamber-logo-light.svg";
 import welcomeImg from "../assets/images/welcome-img.svg";
+import { useNavigate } from "react-router-dom";
 
 export const WelcomePage = () => {
   const [LogoTheme, setLogoTheme] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (localStorage.getItem("theme") == "dark") {
@@ -16,7 +18,7 @@ export const WelcomePage = () => {
 
   return (
     <div className="bg-body page">
-      <div className="text-center justify-content-center pt-5 mt-2">
+      <div className="text-center justify-content-center pt-3 mt-2">
         <img
           src={LogoTheme}
           alt="Flamber Logo"
@@ -27,6 +29,7 @@ export const WelcomePage = () => {
       <div className="text-center justify-content-center mt-4 mb-2">
         <img
           src={welcomeImg}
+          style={{ width: "80vw" }}
           alt="Flamber Logo"
           className="img-fluid col-sm-7 col-12"
         />
@@ -42,11 +45,17 @@ export const WelcomePage = () => {
       </div>
 
       <div className="d-flex flex-column px-4">
-        <button className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2">
+        <button
+          className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2"
+          onClick={navigate("/register")}
+        >
           Register
         </button>
 
-        <button className="f-button-secondery border-0 fs-5 p-2 px-5 rounded-2">
+        <button
+          className="f-button-secondery border-0 fs-5 p-2 px-5 rounded-2"
+          onClick={navigate("/login")}
+        >
           Log In
         </button>
       </div>

@@ -2,14 +2,14 @@ import React from "react";
 
 export const Register = () => {
   return (
-    <div className="m-4 spline-sans mt-5 pt-3 ">
+    <div className="m-4 spline-sans mt-5 pt-3 col-lg-6 col-md-6 mx-md-auto text-center">
       <div className="text-start mb-5">
         <div
           className="fw-semibold text-color-gray"
           style={{ fontSize: "36px" }}
         >
           <div className="text-color-theme" style={{ marginBottom: "-10px" }}>
-            Wellcome let’s{" "}
+            Wellcome let’s
           </div>
           <div className="text-color-theme">get started!</div>
         </div>
@@ -92,7 +92,7 @@ export const Register = () => {
             Already have an account?
           </p>
           <a
-            href="#"
+            href="/login"
             className="text-color-primary text-decoration-none fw-medium ms-2"
           >
             Log In!
