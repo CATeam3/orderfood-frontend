@@ -313,6 +313,7 @@
   height: 40vh; /* This sets the container to 100% of the viewport height */
   display: flex;
   flex-direction: column;
+  max-height: 350px;
 }
 
 .ItemImageContent {
@@ -389,3 +390,5 @@
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+
+

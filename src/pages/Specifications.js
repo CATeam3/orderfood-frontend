@@ -3,26 +3,41 @@ import * as Hi from "react-icons/hi";
 import * as Io from "react-icons/io";
 import SettingProfilePng from "../assets/images/SettingsProfile.png";
 import { MapMenu } from "../components/MapMenu";
+import { useNavigate } from "react-router-dom";
+import * as Fa from "react-icons/fa";
 
 export const Specifications = () => {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
+  const goProfile = () => {
+    navigate("/profile");
+  };
+
+  const goCart = () => {
+    navigate("/my-cart");
+  };
+
   return (
     <div className="mx-4">
       <div className="text-color-primary d-flex align-items-center justify-content-between mt-3 pt-5">
         <div>
-          <Hi.HiOutlineArrowLeft size="40" />
+          <Hi.HiOutlineArrowLeft size="40" onClick={goBack} />
         </div>
         <div className="fs-3 fw-semibold">Specifications</div>
         <div>
-          <img
-            src={SettingProfilePng}
-            className=" rounded-circle"
-            style={{ width: "40px" }}
-          />
+          <Fa.FaUserAlt size="35" onClick={goProfile} />
         </div>
       </div>
 
       <div className="text-color-theme">
-        <div className="text-color-theme flamber-gradient-2 rounded-4 py-2 px-3 mt-5 mx-4">
+        <div
+          className="text-color-theme flamber-gradient-2 rounded-4 py-2 px-3 mt-5 mx-4"
+          onClick={goCart}
+        >
           <div className="d-flex fs-5 fw-semibold justify-content-between">
             <div>My Cart</div>
             <div>
