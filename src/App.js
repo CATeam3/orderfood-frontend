@@ -14,7 +14,7 @@ import { MyCart } from "./pages/MyCart";
 import { Specifications } from "./pages/Specifications";
 import { ForgotPassword } from "./pages/ForgotPassword";
 import { IDContextProvider } from "./components/IDContext";
-
+import ProtectedRoute from "./middleware/ProtectedRoute";
 function App() {
   useEffect(() => {
     if (localStorage.getItem("theme") === null) {
@@ -30,15 +30,64 @@ function App() {
     <IDContextProvider>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
-        <Route path="/home" element={<HomeMenu />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/changepassword" element={<ChangePassword />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/item" element={<ItemView />} />
-        <Route path="/cart" element={<MyCart />} />
-        <Route path="/specs" element={<Specifications />} />
+        <Route
+          path="/changepassword"
+          element={
+            <ProtectedRoute>
+              <ChangePassword />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <HomeMenu />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/item"
+          element={
+            <ProtectedRoute>
+              <ItemView />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <MyCart />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/specs"
+          element={
+            <ProtectedRoute>
+              <Specifications />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
       </Routes>
     </IDContextProvider>

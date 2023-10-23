@@ -7,6 +7,7 @@ import * as Bs from "react-icons/bs";
 import SettingProfilePng from "../assets/images/SettingsProfile.png";
 import { ThemeToggle } from "../components/ThemeToggle";
 import { useNavigate } from "react-router-dom";
+import ApiRequest from "../classes/ApiRequest";
 
 export const Settings = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +21,23 @@ export const Settings = () => {
   };
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const formSubmitHandler = (evt) => {
+    evt.preventDefault();
+
+    const apiRequest = new ApiRequest(
+      "POST",
+      `${process.env.REACT_APP_API_URL}/api/logout`,
+    );
+    apiRequest
+      .sendRequest()
+      .then((result) => {
+        localStorage.removeItem("token");
+      })
+      .catch((error) => null);
+
+    navigate("/");
   };
 
   return (
@@ -43,7 +61,10 @@ export const Settings = () => {
           </button>
         </div>
         <div className="d-flex flex-column">
-          <button className="f-button-secondery border-0 fs-5 p-2  px-5 rounded-2">
+          <button
+            onClick={formSubmitHandler}
+            className="f-button-secondery border-0 fs-5 p-2  px-5 rounded-2"
+          >
             Yes, Log Out
           </button>
         </div>

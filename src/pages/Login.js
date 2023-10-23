@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 import RegImg from "../assets/images/login-img.svg";
+import ApiRequest from "../classes/ApiRequest";
+import Swal from "sweetalert2";
 
 export const Login = () => {
   const navigator = useNavigate();
@@ -11,6 +13,82 @@ export const Login = () => {
   };
   const goReset = () => {
     navigator("/forgotpassword");
+  };
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+
+    if (storedToken) {
+      navigator("/home");
+    } else {
+      const apiRequest = new ApiRequest(
+        "POST",
+        `${process.env.REACT_APP_API_URL}/api/login`,
+        JSON.stringify(userInfo),
+      );
+      apiRequest.editHeader(
+        "Authorization",
+        `Bearer ${process.env.REACT_APP_API_KEY}`,
+      );
+      apiRequest
+        .sendRequest()
+        .then((result) => {
+          const parsed = JSON.parse(result);
+          console.log(parsed);
+          if (parsed.success) {
+            localStorage.setItem("token", parsed.data.token);
+            navigator("/home");
+          } else {
+          }
+        })
+        .catch((error) => {
+          console.error("Login failed:", error);
+        });
+    }
+  }, []);
+
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+    device: window.navigator.platform,
+  });
+
+  const formChangeHandler = (evt) => {
+    const name = evt.target.name;
+    const value = evt.target.value;
+    setUserInfo((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  };
+
+  const formSubmitHandler = (evt) => {
+    evt.preventDefault();
+
+    const apiRequest = new ApiRequest(
+      "POST",
+      `${process.env.REACT_APP_API_URL}/api/login`,
+      JSON.stringify(userInfo),
+    );
+    apiRequest.editHeader(
+      "Authorization",
+      `Bearer ${process.env.REACT_APP_API_KEY}`,
+    );
+    apiRequest
+      .sendRequest()
+      .then((result) => {
+        const parsed = JSON.parse(result);
+        console.log(parsed);
+        if (parsed.success) {
+          localStorage.setItem("token", parsed.data.token);
+          navigator("/home");
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: parsed.data.error,
+          });
+        }
+      })
+      .catch((error) => null);
   };
 
   return (
@@ -57,7 +135,7 @@ export const Login = () => {
               </div>
             </div>
 
-            <form className="mb-5">
+            <form className="mb-5" onSubmit={formSubmitHandler}>
               <div className="text-start d-flex flex-column">
                 <label
                   className="fw-medium mb-2 text-color-theme"
@@ -68,6 +146,9 @@ export const Login = () => {
                 </label>
                 <input
                   id="email"
+                  onChange={formChangeHandler}
+                  value={userInfo.email}
+                  name="email"
                   type="text"
                   className="form-control rounded-2 border-0 bg-body-secondary px-4 py-3 mb-4 input-flamber"
                   placeholder="Email"
@@ -83,6 +164,9 @@ export const Login = () => {
                 </label>
                 <input
                   id="password"
+                  onChange={formChangeHandler}
+                  value={userInfo.password}
+                  name="password"
                   type="password"
                   className="form-control rounded-2 border-0 bg-body-secondary px-4 py-3 mb-4 input-flamber"
                   placeholder="Password"
@@ -108,7 +192,7 @@ export const Login = () => {
 
               <div className="d-flex flex-column">
                 <button
-                  onClick={() => navigator("/home")}
+                  type={"submit"}
                   className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2"
                 >
                   Confirm

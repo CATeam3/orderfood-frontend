@@ -23,7 +23,8 @@
     "react-scripts": "5.0.1",
     "react-search-box": "^3.0.0",
     "react-select": "^5.7.7",
-    "sass": "^1.69.4"
+    "sass": "^1.69.4",
+    "sweetalert2": "^11.7.32"
   },
   "scripts": {
     "start": "react-scripts start",

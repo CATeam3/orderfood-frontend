@@ -1,5 +1,7 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import ApiRequest from "../classes/ApiRequest";
 import { Col, Container, Row } from "react-bootstrap";
 import RegImg from "../assets/images/register-img.svg";
 export const Register = () => {
@@ -8,6 +10,84 @@ export const Register = () => {
   const goLogin = () => {
     navigator("/login");
   };
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+
+    if (storedToken) {
+      navigator("/home");
+    } else {
+      const apiRequest = new ApiRequest(
+        "POST",
+        `${process.env.REACT_APP_API_URL}/api/login`,
+        JSON.stringify(userInfo),
+      );
+      apiRequest.editHeader(
+        "Authorization",
+        `Bearer ${process.env.REACT_APP_API_KEY}`,
+      );
+      apiRequest
+        .sendRequest()
+        .then((result) => {
+          const parsed = JSON.parse(result);
+          console.log(parsed);
+          if (parsed.success) {
+            localStorage.setItem("token", parsed.data.token);
+            navigator("/home");
+          } else {
+          }
+        })
+        .catch((error) => {
+          console.error("Login failed:", error);
+        });
+    }
+  }, []);
+
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
+    device: window.navigator.platform,
+  });
+
+  const formChangeHandler = (evt) => {
+    const name = evt.target.name;
+    const value = evt.target.value;
+    setUserInfo((prevState) => {
+      return { ...prevState, [name]: value.trimStart() };
+    });
+  };
+
+  const formSubmitHandler = (evt) => {
+    evt.preventDefault();
+    let form = evt.target;
+    form.classList.add("was-validated");
+
+    const apiRequest = new ApiRequest(
+      "POST",
+      `${process.env.REACT_APP_API_URL}/api/register`,
+      JSON.stringify(userInfo),
+    );
+    apiRequest.editHeader(
+      "Authorization",
+      `Bearer ${process.env.REACT_APP_API_KEY}`,
+    );
+    apiRequest.sendRequest().then((result) => {
+      const parsed = JSON.parse(result);
+      console.log("swal stuff", parsed);
+      if (parsed.success) {
+        localStorage.setItem("token", parsed.data.token);
+        navigator("/home");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: parsed.data.error,
+        });
+      }
+    });
+  };
+
   return (
     <Row className="justify-content-end w-100">
       <div className="half-screen-gradient w-50 d-none d-md-block" />
@@ -51,7 +131,7 @@ export const Register = () => {
             </div>
           </div>
 
-          <form className="mb-5">
+          <form className="mb-5" onSubmit={formSubmitHandler}>
             <div className="text-start d-flex flex-column">
               <label
                 className="fw-medium mb-2 text-color-theme"
@@ -62,6 +142,11 @@ export const Register = () => {
               </label>
               <input
                 id="name"
+                required
+                pattern={"^[a-zA-Z0-9\\s]+$"}
+                onChange={formChangeHandler}
+                value={userInfo.name}
+                name="name"
                 type="text"
                 className="rounded-2 border-0 px-4 py-3 mb-4 input-flamber"
                 placeholder="Name"
@@ -77,6 +162,9 @@ export const Register = () => {
               </label>
               <input
                 id="email"
+                onChange={formChangeHandler}
+                value={userInfo.email}
+                name="email"
                 type="text"
                 className="rounded-2 border-0 bg-body-secondary px-4 py-3 mb-4 input-flamber"
                 placeholder="Email"
@@ -92,6 +180,9 @@ export const Register = () => {
               </label>
               <input
                 id="password"
+                onChange={formChangeHandler}
+                value={userInfo.password}
+                name="password"
                 type="password"
                 className="rounded-2 border-0 bg-body-secondary px-4 py-3 mb-4 input-flamber"
                 placeholder="Password"
@@ -106,6 +197,9 @@ export const Register = () => {
                 Confirm your password
               </label>
               <input
+                onChange={formChangeHandler}
+                value={userInfo.password_confirmation}
+                name="password_confirmation"
                 id="confirmpassword"
                 type="confirmpassword"
                 className="rounded-2 border-0 bg-body-secondary px-4 py-3 mb-4 input-flamber"
@@ -115,7 +209,7 @@ export const Register = () => {
 
             <div className="d-flex flex-column mt-4">
               <button
-                onClick={() => navigator("/home")}
+                type={"submit"}
                 className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2"
               >
                 Confirm
@@ -126,12 +220,12 @@ export const Register = () => {
               <p className="text-color-gray text-color-theme">
                 Already have an account?
               </p>
-              <div
+              <button
                 onClick={goLogin}
                 className="text-color-primary text-decoration-none fw-medium ms-2 curser-p"
               >
                 Log In!
-              </div>
+              </button>
             </div>
           </form>
 
