@@ -201,7 +201,7 @@ export const Register = () => {
                 value={userInfo.password_confirmation}
                 name="password_confirmation"
                 id="confirmpassword"
-                type="confirmpassword"
+                type="password"
                 className="rounded-2 border-0 bg-body-secondary px-4 py-3 mb-4 input-flamber"
                 placeholder="Confirm password"
               />

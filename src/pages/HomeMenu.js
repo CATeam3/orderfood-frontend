@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import * as Rx from "react-icons/rx";
 import * as Fa from "react-icons/fa";
 import ProfilePng from "../assets/images/Profile.png";
@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import * as Bi from "react-icons/bi";
 import { useIDContext } from "../components/IDContext";
 import { Col, Container, Row } from "react-bootstrap";
+
+import ApiRequest from "../classes/ApiRequest";
 
 export const HomeMenu = () => {
   const { totalCost } = useIDContext();
@@ -32,14 +34,18 @@ export const HomeMenu = () => {
     navigate("/my-cart");
   };
 
-  const splitArray = (array) => {
-    const middleIndex = Math.ceil(array.length / 2);
-    const firstRow = array.slice(0, middleIndex);
-    const secondRow = array.slice(middleIndex);
-    return [firstRow, secondRow];
-  };
+  const [menus, setMenus] = useState(null);
 
-  const [firstRow, secondRow] = splitArray(items);
+  useEffect(() => {
+    const apiRequest = new ApiRequest(
+      "GET",
+      `${process.env.REACT_APP_API_URL}/api/menu`,
+    );
+    apiRequest
+      .sendRequest()
+      .then((result) => setMenus(() => JSON.parse(result).data))
+      .catch((error) => console.log("Error@ForumsPage", error));
+  }, []);
 
   const handleSearchedItem = (data) => {
     setSearchedItem(data);
@@ -118,31 +124,15 @@ export const HomeMenu = () => {
           </div>
         </div>
 
-        <div className="d-flex flex-column mt-3 mx-2 justify-content-center">
-          <div className="d-flex">
-            <div className="d-flex flex-column ms-4 mx-3 mt-2 mb-2">
-              {firstRow
-                .filter((item) => {
-                  return searchedItem.toLowerCase() === ""
-                    ? item
-                    : item.title.toLowerCase().includes(searchedItem);
-                })
-                .map((item) => (
-                  <MenuItem key={item.id} item={item} />
-                ))}
+        <div className="row mt-5 mb-4 row-gap-2">
+          {menus?.map((menu) => (
+            <div
+              key={menu.id}
+              className="col-lg-4 mb-3 d-flex align-items-stretch"
+            >
+              <MenuItem key={menu.id} data={menu} />
             </div>
-            <div className="d-flex flex-column mx-2 me-4 mt-2 mb-2">
-              {secondRow
-                .filter((item) => {
-                  return searchedItem.toLowerCase() === ""
-                    ? item
-                    : item.title.toLowerCase().includes(searchedItem);
-                })
-                .map((item) => (
-                  <MenuItem key={item.id} item={item} />
-                ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
