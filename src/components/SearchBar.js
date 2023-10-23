@@ -1,6 +1,4 @@
-// SearchBar.js
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import * as Ai from "react-icons/ai";
 import items from "../assets/items.json";
@@ -24,7 +22,7 @@ const customStyles = {
   }),
 };
 
-export const SearchBar = () => {
+export const SearchBar = (props) => {
   const [searchTerm, setSearchTerm] = useState(""); // State for the search term
 
   // Transform your items data into the expected format
@@ -38,6 +36,11 @@ export const SearchBar = () => {
     option.label.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
+  const sendSearchTerm = () => {
+    props.sendSearchTerm(searchTerm);
+    console.log("yo");
+  };
+
   return (
     <div className="d-flex align-items-center search-bar rounded-2 ps-4 pe-1 py-1">
       <Ai.AiOutlineSearch className="text-color-theme" />
@@ -47,7 +50,10 @@ export const SearchBar = () => {
           styles={customStyles}
           style={{ color: "white" }}
           placeholder="Search"
-          onInputChange={(inputValue) => setSearchTerm(inputValue)}
+          onInputChange={(inputValue) => {
+            setSearchTerm(inputValue);
+            sendSearchTerm();
+          }}
         />
       </div>
     </div>

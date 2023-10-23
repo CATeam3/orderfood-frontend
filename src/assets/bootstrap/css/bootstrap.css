@@ -54,7 +54,6 @@
 
 .flamber-gradient-2 {
   background: linear-gradient(to top right, #FF5E3B, #DB0000);
-  z-index: -5;
 
 }
 
@@ -143,8 +142,8 @@
   left: 0;
   top: 0;
   transition:
-    background-color 0.3s,
-    border-color 0.3s;
+          background-color 0.3s,
+          border-color 0.3s;
 }
 
 .custom-checkbox {
@@ -175,17 +174,32 @@
   transform: rotate(45deg);
 }
 
-
-.bottom-center {
-  font-size: 12px;
-  position:absolute;
-  width:150px;
-  height:12px;
-  bottom:70px;
-  right:50%;
-  left:50%;
-  margin-left: -75px;
+@media (min-width: 786px) {
+  .bottom-center {
+    font-size: 12px;
+    position: absolute;
+    width: 150px;
+    height: 12px;
+    bottom: 70px;
+    margin-left: 25%;
+    transform: translateX(-95%);
+  }
 }
+
+
+@media (max-width: 785px) {
+  .bottom-center {
+    font-size: 12px;
+    position: absolute;
+    width: 150px;
+    height: 12px;
+    bottom: 70px;
+    margin-left: 50%;
+    transform: translateX(-95%);
+  }
+}
+
+
 
 [data-bs-theme="light"] .input-flamber {
   background-color: #F0F0F0 !important;
@@ -392,3 +406,15 @@
 }
 
 
+.half-screen-gradient {
+  background: linear-gradient(to top right, #FF5E3B, #DB0000);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%; /* Takes up full vertical height of the screen */
+  z-index: -1;
+}
+
+.curser-p:hover {
+  cursor: pointer;
+}
