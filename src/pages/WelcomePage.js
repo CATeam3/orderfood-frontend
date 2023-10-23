@@ -3,8 +3,11 @@ import darkLogo from "../assets/images/flamber-logo-dark.svg";
 import lightLogo from "../assets/images/flamber-logo-light.svg";
 import welcomeImg from "../assets/images/welcome-img.svg";
 
+import { useNavigate } from "react-router-dom";
+
 export const WelcomePage = () => {
   const [LogoTheme, setLogoTheme] = useState("");
+  const navigator = useNavigate();
 
   useEffect(() => {
     if (localStorage.getItem("theme") == "dark") {
@@ -42,11 +45,17 @@ export const WelcomePage = () => {
       </div>
 
       <div className="d-flex flex-column px-4">
-        <button className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2">
+        <button
+          onClick={() => navigator("/register")}
+          className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2"
+        >
           Register
         </button>
 
-        <button className="f-button-secondery border-0 fs-5 p-2 px-5 rounded-2">
+        <button
+          onClick={() => navigator("/login")}
+          className="f-button-secondery border-0 fs-5 p-2 px-5 rounded-2"
+        >
           Log In
         </button>
       </div>

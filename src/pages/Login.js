@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigator = useNavigate();
+
   return (
     <div className="m-4 spline-sans mt-5 pt-3 ">
       <section>
@@ -70,7 +73,10 @@ export const Login = () => {
           </div>
 
           <div className="d-flex flex-column">
-            <button className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2">
+            <button
+              onClick={() => navigator("/home")}
+              className="f-button-primary border-0 fs-5 p-2 px-5 rounded-2 mb-2"
+            >
               Confirm
             </button>
           </div>
@@ -81,6 +87,7 @@ export const Login = () => {
             </p>
             <a
               href="#"
+              onClick={() => navigator("/register")}
               className="text-color-primary text-decoration-none fw-medium ms-2"
             >
               Register!
