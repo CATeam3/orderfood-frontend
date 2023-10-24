@@ -220,18 +220,16 @@ export const Register = () => {
               <p className="text-color-gray text-color-theme">
                 Already have an account?
               </p>
-              <button
+              <div
                 onClick={goLogin}
                 className="text-color-primary text-decoration-none fw-medium ms-2 curser-p"
               >
                 Log In!
-              </button>
+              </div>
             </div>
           </form>
 
-          <div className="mt-5 pt-5 bottom-center text-color-theme">
-            All rights reserved Flember
-          </div>
+
         </div>
       </Col>
     </Row>

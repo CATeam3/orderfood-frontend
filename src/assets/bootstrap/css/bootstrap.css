@@ -267,7 +267,7 @@
 }
 
 .ReactModal__Overlay {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .move-up {
@@ -417,4 +417,20 @@
 
 .curser-p:hover {
   cursor: pointer;
+}
+
+.bg-transparent {
+  background: transparent;
+  border: none;
+}
+
+.home-modal {
+  background: none;
+  position: absolute;
+  top: 11%;
+  right: 1%;
+}
+
+.hover-select:hover {
+  background: rgba(248, 249, 250, 0.49);
 }

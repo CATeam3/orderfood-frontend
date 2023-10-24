@@ -17,13 +17,15 @@ import { IDContextProvider } from "./components/IDContext";
 import ProtectedRoute from "./middleware/ProtectedRoute";
 function App() {
   useEffect(() => {
-    if (localStorage.getItem("theme") === null) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      console.log(localStorage.getItem("theme"));
-    }
+    const currentTheme = localStorage.getItem("theme");
 
-    // Add an event listener to listen for changes in LocalStorage theme
+    if (currentTheme === null) {
+      const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const theme = darkModeQuery.matches ? "dark" : "light";
+
+      // Set the theme in localStorage
+      localStorage.setItem("theme", theme);
+    }
   }, []);
 
   return (

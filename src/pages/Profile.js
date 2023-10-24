@@ -10,6 +10,10 @@ export const Profile = () => {
     navigate(-1);
   };
 
+  const goSettings = () => {
+    navigate("/settings");
+  };
+
   return (
     <div className="flamber-gradient">
       <div className="bg-circle bg-body"></div>
@@ -20,7 +24,7 @@ export const Profile = () => {
             <Hi.HiArrowLeft size="40" onClick={goBack} />
           </div>
           <div className="fs-3 fw-semibold">Profile</div>
-          <div>
+          <div onClick={goSettings}>
             <Bi.BiCog size="40" />
           </div>
         </div>
@@ -64,10 +68,6 @@ export const Profile = () => {
               <div className="text-color-gray">user@gmail.com</div>
             </div>
           </div>
-        </div>
-
-        <div className="mt-5 pt-5 bottom-center text-color-theme">
-          All rights reserved Flember
         </div>
       </div>
     </div>

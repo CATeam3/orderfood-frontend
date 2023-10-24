@@ -92,9 +92,6 @@ export const ForgotPassword = () => {
             </form>
           </section>
 
-          <div className="mt-5 pt-5 bottom-center text-color-theme">
-            All rights reserved Flember
-          </div>
         </div>
       </Col>
     </Row>

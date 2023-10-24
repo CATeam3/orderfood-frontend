@@ -46,7 +46,19 @@ export const Settings = () => {
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
-        className="bg-body text-center p-4 mx-3 mt-40p pt-5"
+        className="bg-body text-center p-4 mx-3 mt-5 pt-5"
+        style={{
+          overlay: {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
+            paddingLeft: "5%",
+            paddingRight: "5%",
+          },
+        }}
       >
         <Bs.BsDoorOpenFill size="170" className="text-color-primary my-5 " />
         <div className="fs-1 fw-semibold mb-4">
@@ -70,12 +82,12 @@ export const Settings = () => {
         </div>
       </Modal>
 
-      <div className="mx-4">
+      <div className=" mx-4">
         <div className="d-flex align-items-center justify-content-between mt-3 pt-5">
           <div onClick={goBack}>
             <Hi.HiOutlineArrowLeft size="40" />
           </div>
-          <div className="fs-3 fw-semibold">Settings</div>
+          <div className="fs-3 fw-semibold ">Settings</div>
           <div>
             <img
               src={SettingProfilePng}
@@ -127,10 +139,6 @@ export const Settings = () => {
           <div>
             <Fa6.FaArrowRightFromBracket size="20" />
           </div>
-        </div>
-
-        <div className="mt-5 pt-5 bottom-center fw-medium">
-          All rights reserved Flember
         </div>
       </div>
     </div>

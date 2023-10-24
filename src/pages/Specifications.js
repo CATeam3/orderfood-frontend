@@ -18,7 +18,7 @@ export const Specifications = () => {
   };
 
   const goCart = () => {
-    navigate("/my-cart");
+    navigate("/cart");
   };
 
   return (

@@ -24,7 +24,7 @@ export const MyCart = () => {
     navigate("/profile");
   };
   const goSpecific = () => {
-    navigate("/specifications");
+    navigate("/specs");
   };
 
   const openModal = () => {
